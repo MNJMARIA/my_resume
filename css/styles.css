@@ -280,3 +280,33 @@ ul, ol {
         font-size: 12px;
     }
 }
+
+
+
+/* === ВІДСТУПИ МІЖ РОЗДІЛАМИ В SIDEBAR === */
+.skills-container,
+.contacts-container {
+    margin-bottom: 20px !important; /* Чіткий відступ між блоками */
+    /* padding-bottom: 8px; */
+}
+
+/* Останній блок — без нижнього відступу (щоб не було зайвого простору) */
+.skills-container:last-of-type,
+.contacts-container:last-of-type {
+    margin-bottom: 0 !important;
+}
+
+/* На мобільних — трохи менше, але все одно чітко */
+@media (max-width: 991px) {
+    .skills-container,
+    .contacts-container {
+        margin-bottom: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-container,
+    .contacts-container {
+        margin-bottom: 15px !important;
+    }
+}
