@@ -1,270 +1,282 @@
+/* === БАЗОВІ НАЛАШТУВАННЯ === */
 body {
     background: #F6F6FA;
-    /* padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 40px;
-    padding-bottom: 40px; */
-
-    padding: 40px 40px 40px 40px;
-
+    padding: 20px;
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
 }
 
 ul, ol {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .wrapper {
     background-color: #ffffff;
-    display: flex;
-    flex-direction: row-reverse;
-    width: 1300px;
+    max-width: 1300px;
     margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-/* Main content */
-.main-content {
-    padding-left: 88px;
-    padding-right: 40px;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    box-sizing: border-box;
+/* === ДЕСКТОП (за замовчуванням) === */
+@media (min-width: 992px) {
+    .wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+    }
 
+    .main-content {
+        flex: 1;
+        padding: 80px 40px 80px 88px;
+    }
+
+    .sidebar {
+        width: 370px;
+        background: #E0EBFE;
+        padding: 40px 0;
+    }
+
+    .sidebar img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .sidebar-content {
+        padding: 40px;
+    }
 }
 
+/* === ПЛАНШЕТИ ТА МОБІЛЬНІ === */
+@media (max-width: 991px) {
+    .wrapper {
+        display: block;
+    }
 
-/* Sidebar */
-.sidebar {
-    background: #E0EBFE;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    box-sizing: border-box;
-    width: 370px;
+    .main-content {
+        padding: 40px 24px;
+    }
+
+    .sidebar {
+        background: #E0EBFE;
+        padding: 40px 24px;
+        text-align: center;
+    }
+
+    .sidebar img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    .sidebar-content {
+        padding: 0;
+    }
+
+    .contacts-container,
+    .skills-container {
+        text-align: left;
+        margin-bottom: 32px;
+    }
 }
 
-.sidebar-content {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-right: 40px;
-    padding-left: 40px;
+/* === ДУЖЕ МАЛЕНЬКІ ЕКРАНИ (мобільні) === */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .main-content {
+        padding: 32px 16px;
+    }
+
+    .my-name {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .my-profession {
+        font-size: 13px;
+    }
+
+    .my-description,
+    .my-project-item,
+    .my-projects-item-tech,
+    .work-experience-duties-list-item,
+    .skills-list-item {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    .work-experience-title,
+    .my-projects-title,
+    .education-title,
+    .contacts-title,
+    .skills-title {
+        font-size: 20px;
+    }
+
+    .work-experience-company,
+    .education-place {
+        font-size: 15px;
+    }
+
+    .sidebar img {
+        width: 150px;
+        height: 150px;
+    }
 }
 
-.contacts-title {
+/* === ЗАГАЛЬНІ СТИЛІ === */
+.contacts-title,
+.skills-title,
+.work-experience-title,
+.my-projects-title,
+.education-title {
     color: #161D2A;
     font-size: 22px;
     font-weight: 700;
-    line-height: normal;
-    margin-top: 0;
+    margin: 0 0 8px 0;
 }
 
 .contacts-type {
     color: #161D2A;
-    font-size: 14px;
     font-weight: 700;
-    line-height: normal;
-    margin-top: 0;
     margin-right: 8px;
 }
 
 .contact-link {
     color: #2979FF;
-    font-family: Montserrat;
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    text-decoration-line: underline;
+    text-decoration: underline;
 }
 
 .contacts-item {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.contacts-container {
-    margin-bottom: 40px;
-}
-
-/* Skills container */
-.skills-container {
-    margin-bottom: 40px;
-}
-
-.skills-title {
-    color: #161D2A;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: normal;
-    margin-top: 0;
-    margin-bottom: 8px;
-}
-
-.skills-list {
-    padding-left: 22px;
-}
-
-.skills-list-item {
-    color: #161D2A;
+    margin: 4px 0;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 24px; /* 171.429% */
 }
 
-/* Main content */
+.skills-list,
+.work-experience-duties-list,
+.my-projects-list {
+    padding-left: 18px;
+    list-style: disc;
+}
+
+.skills-list-item,
+.work-experience-duties-list-item {
+    color: #595959;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 4px;
+}
+
 .my-profession {
     color: #000;
     font-size: 14px;
     font-weight: 700;
-    line-height: 17px;
-    margin-top: 0px;
-    margin-bottom: 8px;
+    margin: 0 0 8px 0;
 }
 
 .my-name {
     color: #000;
     font-size: 45px;
     font-weight: 700;
-    line-height: 55px; 
-    margin-top: 0px;
-    margin-bottom: 12px;
+    line-height: 55px;
+    margin: 0 0 12px 0;
 }
 
 .my-description {
     color: #595959;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 24px; 
+    line-height: 24px;
+    margin: 0 0 16px 0;
 }
 
 .my-info {
     margin-bottom: 40px;
 }
 
-
-/* My Projects */
-.my-projects-title {
-    color: #000;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 27px;
-    margin-top: 0px;
-    margin-bottom: 8px;
+.my-projects-container,
+.work-experience-container {
+    margin-bottom: 40px;
 }
 
 .my-project-item {
-    color: #000;
-    font-size: 14px;
     font-weight: 700;
-    line-height: 24px; 
-}
-
-.my-projects-list {
-    padding-left: 18px;
+    color: #000;
+    margin-bottom: 4px;
 }
 
 .my-projects-item-link {
     color: #005FFF;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px; 
-    text-decoration-line: underline;
+    text-decoration: underline;
 }
 
 .my-projects-item-tech {
     color: #595959;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
+    display: block;
+    margin-bottom: 12px;
+    word-wrap: break-word;
 }
 
-.my-projects-container {
-    margin-bottom: 40px;
-}
-
-/* Work Experience */
-.work-experience-title {
-    color: #000;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: 27px;
-    margin-top: 0px;
-    margin-bottom: 8px;
-}
 .work-experience-company {
     color: #000;
     font-size: 16px;
     font-weight: 700;
-    line-height: 20px; 
-    margin-top: 0px;
-    margin-bottom: 12px;
+    margin: 0 0 8px 0;
 }
+
 .work-experience-company-name {
     color: #6D9BF5;
 }
+
 .work-experience-period {
     color: #A8A8A8;
     font-size: 12px;
-    font-weight: 400;
-    line-height: 15px;
     margin-bottom: 8px;
-}
-.work-experience-separator{
-    color: #000;
-}
-.work-experience-duties-list {
-    padding-left: 18px;
-}
-.work-experience-duties-list-item {
-    color: #595959;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-}
-.work-experience-company-container {
-    margin-bottom: 12px;
-}
-.work-experience-container {
-    margin-bottom: 40px;
 }
 
-/* Education */
-.education-title {
+.work-experience-separator {
     color: #000;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: normal;
-    margin-top: 0px;
-    margin-bottom: 8px;
+    margin: 0 4px;
 }
 
 .education-place {
     color: #6D9BF5;
     font-size: 16px;
     font-weight: 700;
-    line-height: normal; 
-    margin-top: 0px;
-    margin-bottom: 8px;
+    margin: 0 0 4px 0;
 }
 
 .education-specialization {
     color: #000;
     font-size: 14px;
     font-weight: 700;
-    line-height: normal;
-    margin-top: 0px;
-    margin-bottom: 8px;
+    margin: 0 0 4px 0;
 }
 
 .education-period {
     color: #A8A8A8;
     font-size: 12px;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 0px;
-    margin-bottom: 8px;
+    margin: 0 0 16px 0;
 }
 
-.education-period-separator {
-    color: #000;
+/* Приховуємо крапки в проектах на мобільних */
+@media (max-width: 768px) {
+    .my-projects-item-tech {
+        display: none;
+    }
+    .my-project-item::after {
+        content: " [AppSheet, GAS, Java, etc.]";
+        color: #888;
+        font-weight: normal;
+        font-size: 12px;
+    }
 }
